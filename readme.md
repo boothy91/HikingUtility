@@ -28,7 +28,7 @@
   <h2>⚙️ Setup & Installation</h2>
   <ol>
     <li><strong>Clone the Repository</strong>
-      <pre><code>git clone https://github.com/daveeeeeehike/HikingUtility.git
+      <pre><code>git clone https://github.com/boothy91/HikingUtility.git
 cd HikingUtility</code></pre>
     </li>
 
