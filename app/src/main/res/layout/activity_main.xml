@@ -1,74 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#1C1410">
 
-<LinearLayout
-android:fitsSystemWindows="true"
-android:gravity="center"
-android:layout_height="match_parent"
-android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_start_tracking"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tracking Menu"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="?attr/colorPrimary"
-        android:textColor="@android:color/white"/>
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:fitsSystemWindows="true">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_maps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Maps"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="?attr/colorPrimary"
-        android:textColor="@android:color/white"/>
+        <!-- App Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥾 TRAIL UTILITY"
+            android:textColor="#D4C5A9"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="4dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_gpx"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="GPX Manager"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="?attr/colorPrimary"
-        android:textColor="@android:color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your hiking companion"
+            android:textColor="#A89880"
+            android:textSize="14sp"
+            android:letterSpacing="0.05"
+            android:layout_marginBottom="40dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_offline_map_downloader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Offline Map Downloader"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="?attr/colorPrimary"
-        android:textColor="@android:color/white"/>
+        <!-- Tracking Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_offline_map_manager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Offline Map Manager"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="?attr/colorPrimary"
-        android:textColor="@android:color/white"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_start_tracking"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="📍  Tracking Menu"
+                android:textSize="16sp"
+                android:textColor="#D4C5A9"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                app:backgroundTint="#4A7C59"
+                app:cornerRadius="16dp"
+                app:rippleColor="#6B9E75" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Maps Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_maps"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="🗺️  Maps"
+                android:textSize="16sp"
+                android:textColor="#D4C5A9"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                app:backgroundTint="#5C4033"
+                app:cornerRadius="16dp"
+                app:rippleColor="#7A5C46" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- GPX Manager Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_gpx"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="📂  GPX Manager"
+                android:textSize="16sp"
+                android:textColor="#D4C5A9"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                app:backgroundTint="#5C4033"
+                app:cornerRadius="16dp"
+                app:rippleColor="#7A5C46" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Offline Map Downloader Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_offline_map_downloader"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="⬇️  Offline Map Downloader"
+                android:textSize="16sp"
+                android:textColor="#D4C5A9"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                app:backgroundTint="#5C4033"
+                app:cornerRadius="16dp"
+                app:rippleColor="#7A5C46" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Offline Map Manager Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_offline_map_manager"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="🗄️  Offline Map Manager"
+                android:textSize="16sp"
+                android:textColor="#D4C5A9"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                app:backgroundTint="#5C4033"
+                app:cornerRadius="16dp"
+                app:rippleColor="#7A5C46" />
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
-
 </ScrollView>

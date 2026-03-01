@@ -1,58 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1C1410"
     android:fitsSystemWindows="true"
-    android:padding="30dp">
+    android:padding="20dp">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPX LIBRARY"
+        android:textColor="#D4C5A9"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.15"
+        android:layout_marginBottom="6dp" />
 
     <TextView
         android:id="@+id/tv_track_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 GPX tracks found"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp" />
+        android:text="0 tracks found"
+        android:textColor="#A89880"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp" />
 
+    <!-- Import Buttons -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_import_gpx"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Import GPX File"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="?attr/colorPrimary"/>
+        android:layout_height="52dp"
+        android:text="📂  Import GPX File"
+        android:textSize="15sp"
+        android:textColor="#D4C5A9"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        app:cornerRadius="14dp"
+        app:backgroundTint="#4A7C59" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_import_osm"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Import OSM Trace"
-        android:layout_marginTop="8dp"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="?attr/colorPrimary"/>
+        android:layout_height="52dp"
+        android:text="🌐  Import OSM Trace"
+        android:textSize="15sp"
+        android:textColor="#D4C5A9"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        app:cornerRadius="14dp"
+        app:backgroundTint="#5C4033" />
 
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3D2B1A"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Track List -->
     <ListView
         android:id="@+id/list_gpx_tracks"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+        android:divider="#3D2B1A"
+        android:dividerHeight="1dp" />
 
-</ScrollView>
+</LinearLayout>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/colorBackground"
-    android:padding="16dp">
+    android:background="#1C1410"
+    android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,132 +15,213 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GPX Tracks"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="24sp"
+            android:text="GPX TRACKS"
+            android:textColor="#D4C5A9"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="20dp" />
 
-        <!-- Current Track Status -->
-        <TextView
-            android:id="@+id/tv_current_track"
+        <!-- Status Card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="⚫ Not recording"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
 
-        <!-- Track Statistics -->
-        <TextView
-            android:id="@+id/tv_track_stats"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STATUS"
+                    android:textColor="#A89880"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.12"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tv_current_track"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚫  Not recording"
+                    android:textColor="#D4C5A9"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_track_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No track data"
+                    android:textColor="#A89880"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Recording Controls Card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No track data"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="14sp"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRACK RECORDING"
+                    android:textColor="#A89880"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.12"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_start_tracking"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="▶  Start"
+                        android:textSize="14sp"
+                        android:textColor="#D4C5A9"
+                        android:textStyle="bold"
+                        app:backgroundTint="#4A7C59"
+                        app:cornerRadius="12dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_stop_tracking"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="⏹  Stop"
+                        android:textSize="14sp"
+                        android:textColor="#D4C5A9"
+                        android:textStyle="bold"
+                        app:backgroundTint="#7A3B2E"
+                        app:cornerRadius="12dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Track Management Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#2E2218"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#5C4033"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRACK MANAGEMENT"
+                    android:textColor="#A89880"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.12"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_save_track"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="💾  Save Track to Downloads"
+                    android:textSize="14sp"
+                    android:textColor="#D4C5A9"
+                    android:textStyle="bold"
+                    app:backgroundTint="#5C4033"
+                    app:cornerRadius="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_view_on_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="🗺️  View Track on Map"
+                    android:textSize="14sp"
+                    android:textColor="#D4C5A9"
+                    android:textStyle="bold"
+                    app:backgroundTint="#5C4033"
+                    app:cornerRadius="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_import_gpx"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="📂  Import GPX File"
+                    android:textSize="14sp"
+                    android:textColor="#D4C5A9"
+                    android:textStyle="bold"
+                    app:backgroundTint="#8B6914"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tips Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:fontFamily="monospace" />
+            app:cardBackgroundColor="#241A10"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#3D2B1A"
+            app:strokeWidth="1dp">
 
-        <!-- Recording Controls -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Track Recording"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📍 GPS Tracking Tips\n\n• Start Recording to log your hiking route\n• GPX files are saved to Downloads folder\n• Import existing GPX files from any hiking app\n• View tracks on topographic maps\n• Share tracks via email or messaging\n\n🔋 GPS tracking uses more battery"
+                android:textColor="#A89880"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.4"
+                android:padding="16dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp">
-
-            <Button
-                android:id="@+id/btn_start_tracking"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:text="Start Recording"
-                android:textSize="14sp"
-                android:background="#CC0000"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/btn_stop_tracking"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:text="Stop Recording"
-                android:textSize="14sp"
-                android:background="#333333"
-                android:textColor="#FFFFFF"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <!-- Track Management -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Track Management"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
-
-        <Button
-            android:id="@+id/btn_save_track"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Save Track to Downloads"
-            android:textSize="14sp"
-            android:background="#006600"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/btn_view_on_map"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="View Track on Map"
-            android:textSize="14sp"
-            android:background="#0066CC"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/btn_import_gpx"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Import GPX File"
-            android:textSize="14sp"
-            android:background="#333333"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Instructions -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="📍 GPS Tracking Instructions:\n\n• Start Recording to log your hiking route\n• GPX files are saved to Downloads folder\n• Import existing GPX files from any hiking app\n• View tracks on topographic maps\n• Share tracks via email/messaging\n\n🔋 Tip: GPS tracking uses more battery"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="12sp"
-            android:lineSpacingMultiplier="1.2"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="12dp" />
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
-
 </ScrollView>
