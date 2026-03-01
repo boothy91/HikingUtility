@@ -11,6 +11,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.widget.Button;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,7 +40,7 @@ public class MapActivity extends AppCompatActivity implements LocationHelper.Loc
     private MapView mapView;
     private MapLibreMap mapLibreMap;
     private LocationHelper locationHelper;
-    private Button btnCenterLocation;
+    private FloatingActionButton btnCenterLocation;
 
     private double currentLat = 40.7128; // default
     private double currentLon = -74.0060;
